@@ -48,70 +48,71 @@ namespace Taschenrechner
 
         private void Button_1_Click(object sender, RoutedEventArgs e)
         {
-            ResultField.Content = Calculate.setNum(1, ResultField.Content.ToString(), calcOperationSet, provider);
+            ResultField.Content = Calculate.setNum(1, ResultField.Content.ToString(), calcOperationSet);
             calcOperationSet = false;
         }
 
         private void Button_2_Click(object sender, RoutedEventArgs e)
         {
-            ResultField.Content = Calculate.setNum(2, ResultField.Content.ToString(), calcOperationSet, provider);
+            ResultField.Content = Calculate.setNum(2, ResultField.Content.ToString(), calcOperationSet);
             calcOperationSet = false;
         }
 
         private void Button_3_Click(object sender, RoutedEventArgs e)
         {
-            ResultField.Content = Calculate.setNum(3, ResultField.Content.ToString(), calcOperationSet, provider);
+            ResultField.Content = Calculate.setNum(3, ResultField.Content.ToString(), calcOperationSet);
             calcOperationSet = false;
         }
 
         private void Button_4_Click(object sender, RoutedEventArgs e)
         {
-            ResultField.Content = Calculate.setNum(4, ResultField.Content.ToString(), calcOperationSet, provider);
+            ResultField.Content = Calculate.setNum(4, ResultField.Content.ToString(), calcOperationSet);
             calcOperationSet = false;
         }
 
         private void Button_5_Click(object sender, RoutedEventArgs e)
         {
-            ResultField.Content = Calculate.setNum(5, ResultField.Content.ToString(), calcOperationSet, provider);
+            ResultField.Content = Calculate.setNum(5, ResultField.Content.ToString(), calcOperationSet);
             calcOperationSet = false;
         }
 
         private void Button_6_Click(object sender, RoutedEventArgs e)
         {
-            ResultField.Content = Calculate.setNum(6, ResultField.Content.ToString(), calcOperationSet, provider);
+            ResultField.Content = Calculate.setNum(6, ResultField.Content.ToString(), calcOperationSet);
             calcOperationSet = false;
         }
 
         private void Button_7_Click(object sender, RoutedEventArgs e)
         {
-            ResultField.Content = Calculate.setNum(7, ResultField.Content.ToString(), calcOperationSet, provider);
+            ResultField.Content = Calculate.setNum(7, ResultField.Content.ToString(), calcOperationSet);
             calcOperationSet = false;
         }
 
         private void Button_8_Click(object sender, RoutedEventArgs e)
         {
-            ResultField.Content = Calculate.setNum(8, ResultField.Content.ToString(), calcOperationSet, provider);
+            ResultField.Content = Calculate.setNum(8, ResultField.Content.ToString(), calcOperationSet);
             calcOperationSet = false;
         }
 
         private void Button_9_Click(object sender, RoutedEventArgs e)
         {
-            ResultField.Content = Calculate.setNum(9, ResultField.Content.ToString(), calcOperationSet, provider);
+            ResultField.Content = Calculate.setNum(9, ResultField.Content.ToString(), calcOperationSet);
             calcOperationSet = false;
-
         }
 
         private void Button_0_Click(object sender, RoutedEventArgs e)
         {
-            ResultField.Content = Calculate.setNum(0, ResultField.Content.ToString(), calcOperationSet, provider);
+            ResultField.Content = Calculate.setNum(0, ResultField.Content.ToString(), calcOperationSet);
             calcOperationSet = false;
         }
 
+
+
         private void Button_Comma_Click(object sender, RoutedEventArgs e)
         {
-            if(!ResultField.Content.ToString().Contains("."))
+            if(!ResultField.Content.ToString().Contains(","))
             {
-                ResultField.Content = ResultField.Content + ".";
+                ResultField.Content = ResultField.Content + ",";
             }
             
         }

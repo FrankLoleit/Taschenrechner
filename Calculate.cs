@@ -33,26 +33,26 @@ namespace Taschenrechner
             return num1 / num2;
         }
 
-        public static double setNum(double num, string display, bool calcOperationSet, IFormatProvider provider)
+        public static double setNum(double num, string display, bool calcOperationSet)
         {
            
 
             if (calcOperationSet)
                 display = 0.ToString();
 
-            if (display.Contains("."))
-                display = display + num.ToString();
+            if (display.ToString().Contains(","))
+                display = display.ToString() + num.ToString();
             
             else
             {
                 if (Convert.ToDouble(display) != 0)
-                    display = display + num.ToString();
+                    display = display.ToString() + num.ToString();
                 else
                     display = num.ToString();
             }
             
 
-            return Convert.ToDouble(display, provider);
+            return Convert.ToDouble(display);
         }
     }
 }
