@@ -4,10 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+
 namespace Taschenrechner
 {
     class Calculate
+
+
     {
+        
+
         public static double Add(double num1, double num2)
         {
             return num1 + num2;
@@ -28,8 +33,10 @@ namespace Taschenrechner
             return num1 / num2;
         }
 
-        public static double setNum(double num, string display, bool calcOperationSet)
+        public static double setNum(double num, string display, bool calcOperationSet, IFormatProvider provider)
         {
+           
+
             if (calcOperationSet)
                 display = 0.ToString();
 
@@ -43,8 +50,9 @@ namespace Taschenrechner
                 else
                     display = num.ToString();
             }
+            
 
-            return Convert.ToDouble(display);
+            return Convert.ToDouble(display, provider);
         }
     }
 }
