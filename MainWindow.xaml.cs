@@ -110,6 +110,7 @@ namespace Taschenrechner
             {
                 ResultField.Content = ResultField.Content + ".";
             }
+            
         }
 
         private void Button_Equals_Click(object sender, RoutedEventArgs e)

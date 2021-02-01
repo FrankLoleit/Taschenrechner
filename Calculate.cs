@@ -31,14 +31,11 @@ namespace Taschenrechner
         public static double setNum(double num, string display, bool calcOperationSet)
         {
             if (calcOperationSet)
-            {
                 display = 0.ToString();
-            }
 
             if (display.Contains("."))
-            {
                 display = display + num.ToString();
-            }
+            
             else
             {
                 if (Convert.ToDouble(display) != 0)
@@ -47,12 +44,7 @@ namespace Taschenrechner
                     display = num.ToString();
             }
 
-            
             return Convert.ToDouble(display);
-            
-            
         }
-
-        
     }
 }
