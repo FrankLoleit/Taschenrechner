@@ -20,17 +20,9 @@ namespace Taschenrechner
     /// </summary>
     public partial class MainWindow : Window
     {
-        double num1 = 0;
-        double num2 = 0;
-        double[] valuesToProcess;
+        double firstNumber = 0;
         bool calcOperationSet;
-        struct calcOperation
-        {
-            bool add;
-            bool sub;
-            bool multi;
-            bool div;
-        }
+        string calcOperation = "";
 
         public double[] AddNumsToList(double[] NumList, double num)
         {
@@ -114,38 +106,77 @@ namespace Taschenrechner
 
         private void Button_Comma_Click(object sender, RoutedEventArgs e)
         {
-
+            if(!ResultField.Content.ToString().Contains("."))
+            {
+                ResultField.Content = ResultField.Content + ".";
+            }
         }
 
         private void Button_Equals_Click(object sender, RoutedEventArgs e)
         {
-
+            
+            switch (calcOperation)
+            {
+                case "+":
+                    firstNumber =  Calculate.Add(firstNumber, Convert.ToDouble(ResultField.Content));
+                    ResultField.Content = firstNumber;
+                    break;
+                case "-":
+                    firstNumber = Calculate.Sub(firstNumber, Convert.ToDouble(ResultField.Content));
+                    ResultField.Content = firstNumber;
+                    break;
+                case "*":
+                    firstNumber = Calculate.Multi(firstNumber, Convert.ToDouble(ResultField.Content));
+                    ResultField.Content = firstNumber;
+                    break;
+                case "/":
+                    firstNumber = Calculate.Divide(firstNumber, Convert.ToDouble(ResultField.Content));
+                    ResultField.Content = firstNumber;
+                    break;
+                default:
+                    break;
+                
+            }
+            calcOperation = "";
         }
 
+        // 4 calc-operations
         private void Button_Plus_Click(object sender, RoutedEventArgs e)
         {
             calcOperationSet = true;
+            calcOperation = "+";
+            //currentNumber = Calculate.Add(Convert.ToDouble(ResultField.Content), currentNumber);
+            firstNumber = Convert.ToDouble(ResultField.Content);
+
         }
 
         private void Button_Minus_Click(object sender, RoutedEventArgs e)
         {
             calcOperationSet = true;
+            calcOperation = "-";
+            firstNumber = Convert.ToDouble(ResultField.Content);
         }
 
         private void Button_Multi_Click(object sender, RoutedEventArgs e)
         {
             calcOperationSet = true;
+            calcOperation = "*";
+            firstNumber = Convert.ToDouble(ResultField.Content);
         }
 
         private void Button_Divide_Click(object sender, RoutedEventArgs e)
         {
             calcOperationSet = true;
+            calcOperation = "/";
+            firstNumber = Convert.ToDouble(ResultField.Content);
         }
 
+        // Reset calculator
         private void Button_C_Click(object sender, RoutedEventArgs e)
         {
             calcOperationSet = false;
             ResultField.Content = 0;
+            firstNumber = 0;
         }
     }
 }

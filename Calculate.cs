@@ -34,11 +34,20 @@ namespace Taschenrechner
             {
                 display = 0.ToString();
             }
-            
-            if (Convert.ToDouble(display) != 0)
+
+            if (display.Contains("."))
+            {
                 display = display + num.ToString();
+            }
             else
-                display = num.ToString();
+            {
+                if (Convert.ToDouble(display) != 0)
+                    display = display + num.ToString();
+                else
+                    display = num.ToString();
+            }
+
+            
             return Convert.ToDouble(display);
             
             
