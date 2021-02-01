@@ -24,6 +24,13 @@ namespace Taschenrechner
         double num2 = 0;
         double[] valuesToProcess;
         bool calcOperationSet;
+        struct calcOperation
+        {
+            bool add;
+            bool sub;
+            bool multi;
+            bool div;
+        }
 
         public double[] AddNumsToList(double[] NumList, double num)
         {
