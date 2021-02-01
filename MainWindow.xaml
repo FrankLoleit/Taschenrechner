@@ -1,0 +1,73 @@
+﻿<Window x:Class="Taschenrechner.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Taschenrechner"
+        mc:Ignorable="d"
+        Title="Taschenrechner" Height="560" Width="400" Background="#666666" ResizeMode="NoResize">
+    <Border Background="#888888" BorderBrush="AliceBlue" Margin="30">
+        <StackPanel Margin="10">
+            
+            <Border Background="#aaaaaa" BorderBrush="AliceBlue" Margin="0">
+            <Label Content="Taschenrechner" HorizontalAlignment="Center" FontSize="30" Margin="0"></Label>
+            </Border>
+
+            <Border Background="#EEEEEE" BorderBrush="AliceBlue" Margin="0">
+                <Label Name="ResultField" Content="0" HorizontalAlignment="Right" FontSize="30" Margin="0" ></Label>
+            </Border>
+
+            <Border Background="#EEEEEE" BorderBrush="AliceBlue" Margin="0">
+
+                <DockPanel  >
+                    
+                    <Button Content="+" Click="Button_Plus_Click" FontSize="30"     Width="Auto" MinWidth="62"></Button>
+                    <Button Content="-" Click="Button_Minus_Click" FontSize="30"    Width="Auto" MinWidth="62"></Button>
+                    <Button Content="x" Click="Button_Multi_Click" FontSize="30"    Width="Auto" MinWidth="62"></Button>
+                    <Button Content=":" Click="Button_Divide_Click" FontSize="30"   Width="Auto" MinWidth="62"></Button>
+                    <Button Content="C" Click="Button_C_Click" FontSize="30"        Width="Auto" MinWidth="62"></Button>
+                    
+                </DockPanel>
+                
+            </Border>
+            <Separator Height="20" Background="#666666"></Separator>
+
+            <DockPanel  >
+
+                <Button Content="1" Click="Button_1_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                <Button Content="2" Click="Button_2_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                <Button Content="3" Click="Button_3_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                                                                                      
+                                                                                      
+            </DockPanel>                                                              
+                                                                                      
+            <DockPanel  >                                                             
+                                                                                      
+                <Button Content="4"  Click="Button_4_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                <Button Content="5"  Click="Button_5_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                <Button Content="6"  Click="Button_6_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                                                                          
+                                                                          
+            </DockPanel>                                                  
+                                                                          
+            <DockPanel  >                                                 
+                                                                          
+                <Button Content="7"  Click="Button_7_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                <Button Content="8"  Click="Button_8_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                <Button Content="9"  Click="Button_9_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                                                                          
+                                                                          
+            </DockPanel>                                                  
+            <DockPanel  >                                                 
+                                                                          
+                <Button Content="0"  Click="Button_0_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                <Button Content=","  Click="Button_Comma_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+                <Button Content="="  Click="Button_Equals_Click" FontSize="30" Width="Auto" MinWidth="103"  MinHeight="68"></Button>
+
+
+            </DockPanel>
+            
+
+        </StackPanel>
+    </Border>
+</Window>
