@@ -1,19 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.Globalization;
-
 
 namespace Taschenrechner
 {
@@ -27,12 +14,7 @@ namespace Taschenrechner
         string calcOperation = "";
         IFormatProvider provider = new CultureInfo("en-us");
 
-        public double[] AddNumsToList(double[] NumList, double num)
-        {
-            NumList[NumList.Length] = num;
-            return NumList;
-        }
-
+        
 
 
         public MainWindow()
@@ -123,24 +105,21 @@ namespace Taschenrechner
             switch (calcOperation)
             {
                 case "+":
-                    firstNumber =  Calculate.Add(firstNumber, Convert.ToDouble(ResultField.Content));
+                    firstNumber =  Calculate.Add(firstNumber, Convert.ToDouble(ResultField.Content.ToString()));
                     ResultField.Content = firstNumber;
                     break;
                 case "-":
-                    firstNumber = Calculate.Sub(firstNumber, Convert.ToDouble(ResultField.Content));
+                    firstNumber = Calculate.Sub(firstNumber, Convert.ToDouble(ResultField.Content.ToString()));
                     ResultField.Content = firstNumber;
                     break;
                 case "*":
-                    firstNumber = Calculate.Multi(firstNumber, Convert.ToDouble(ResultField.Content));
+                    firstNumber = Calculate.Multi(firstNumber, Convert.ToDouble(ResultField.Content.ToString()));
                     ResultField.Content = firstNumber;
                     break;
                 case "/":
-                    firstNumber = Calculate.Divide(firstNumber, Convert.ToDouble(ResultField.Content));
+                    firstNumber = Calculate.Divide(firstNumber, Convert.ToDouble(ResultField.Content.ToString()));
                     ResultField.Content = firstNumber;
                     break;
-                default:
-                    break;
-                
             }
             calcOperation = "";
         }
@@ -151,7 +130,7 @@ namespace Taschenrechner
             calcOperationSet = true;
             calcOperation = "+";
             //currentNumber = Calculate.Add(Convert.ToDouble(ResultField.Content), currentNumber);
-            firstNumber = Convert.ToDouble(ResultField.Content);
+            firstNumber = Convert.ToDouble(ResultField.Content.ToString());
 
         }
 
@@ -159,21 +138,21 @@ namespace Taschenrechner
         {
             calcOperationSet = true;
             calcOperation = "-";
-            firstNumber = Convert.ToDouble(ResultField.Content);
+            firstNumber = Convert.ToDouble(ResultField.Content.ToString());
         }
 
         private void Button_Multi_Click(object sender, RoutedEventArgs e)
         {
             calcOperationSet = true;
             calcOperation = "*";
-            firstNumber = Convert.ToDouble(ResultField.Content);
+            firstNumber = Convert.ToDouble(ResultField.Content.ToString());
         }
 
         private void Button_Divide_Click(object sender, RoutedEventArgs e)
         {
             calcOperationSet = true;
             calcOperation = "/";
-            firstNumber = Convert.ToDouble(ResultField.Content);
+            firstNumber = Convert.ToDouble(ResultField.Content.ToString());
         }
 
         // Reset calculator
